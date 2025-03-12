@@ -24,34 +24,34 @@ function App() {
     });
   };
 
-  useEffect(()=>{
-      // Get the URL hash (the part after #)
-      const hash = window.location.hash;
-      console.log("hash")
+  // useEffect(()=>{
+  //     // Get the URL hash (the part after #)
+  //     const hash = window.location.hash;
+  //     console.log("hash")
 
-      // Parse the URL hash to extract tokens
-      const params = new URLSearchParams(hash.replace('#', '?'));
+  //     // Parse the URL hash to extract tokens
+  //     const params = new URLSearchParams(hash.replace('#', '?'));
 
-      const accessToken = params.get('access_token');
-      const expiresAt = params.get('expires_at');
-      const refreshToken = params.get('refresh_token');
-      const tokenType = params.get('token_type');
+  //     const accessToken = params.get('access_token');
+  //     const expiresAt = params.get('expires_at');
+  //     const refreshToken = params.get('refresh_token');
+  //     const tokenType = params.get('token_type');
 
-      if (accessToken) {
-        // Store tokens (e.g., in localStorage)
-        localStorage.setItem('access_token', accessToken);
+  //     if (accessToken) {
+  //       // Store tokens (e.g., in localStorage)
+  //       localStorage.setItem('access_token', accessToken);
 
-        console.log("Access Token:", accessToken);
-        console.log("Expires At:", expiresAt);
-        console.log("Refresh Token:", refreshToken);
-        console.log("Token Type:", tokenType);
+  //       console.log("Access Token:", accessToken);
+  //       console.log("Expires At:", expiresAt);
+  //       console.log("Refresh Token:", refreshToken);
+  //       console.log("Token Type:", tokenType);
 
-        // Redirect to another page after successful authentication
-        navigate("/home"); // Change to your target URL
-      } else {
-        console.error("No access token found in the URL.");
-      }
-  },[]);
+  //       // Redirect to another page after successful authentication
+  //       navigate("/home"); // Change to your target URL
+  //     } else {
+  //       console.error("No access token found in the URL.");
+  //     }
+  // },[]);
 
   return (
     <div className="App">
